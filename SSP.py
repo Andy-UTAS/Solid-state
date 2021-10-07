@@ -15,9 +15,9 @@ def setplotstyle():
     matplotlib.rcParams['axes.linewidth'] = 2.5
     for p in ['xtick', 'ytick']:
         matplotlib.rcParams[p+'.major.size'] = 10
-        matplotlib.rcParams[p+'.minor.size'] = 2.5
+        matplotlib.rcParams[p+'.minor.size'] = 5
         matplotlib.rcParams[p+'.major.width'] = 2.5
-        matplotlib.rcParams[p+'.major.width'] = 1.5
+        matplotlib.rcParams[p+'.minor.width'] = 1.5
 
 def draw_classic_axes(ax, x=0, y=0, xlabeloffset=.1, ylabeloffset=.07):
     ax.set_axis_off()
@@ -50,10 +50,13 @@ import wikitables
 import scipy.constants as const # scipy.constants for physical constants
 from scipy.optimize import curve_fit # scipy.optimize for curve fitting
 import scipy.integrate as integrate #scipy.integrate for numerical integration
+from scipy.signal import find_peaks # scipy.signal for peak finding
 
 ######### "Global variables" (not actually gloabl variables in the python sense) #########
 R = const.R
 hbar = const.hbar
 kb = const.k
+m_e = const.m_e
+e = const.e
 
 setplotstyle() # Set the plot style
